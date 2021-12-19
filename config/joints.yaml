@@ -1,0 +1,13 @@
+bittle:
+  joints_controller:
+    type: "position_controllers/JointGroupPositionController"
+    publish_rate: 50
+    joints:
+      - right_front_shoulder_joint
+      - right_front_knee_joint
+      - left_front_shoulder_joint
+      - left_front_knee_joint
+      - right_back_shoulder_joint
+      - right_back_knee_joint
+      - left_back_shoulder_joint
+      - left_back_knee_joint
