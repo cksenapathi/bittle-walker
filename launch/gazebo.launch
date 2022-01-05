@@ -24,6 +24,8 @@
         args="-z 1.0 -unpause -urdf -model robot -param robot_description"
         respawn="false" output="screen"/>
 
+  <node pkg="quad_walk" name="joint_transfer_node" type="joints_transfer.py"/>
+
   <node if="$(arg gui)" name="joint_state_publisher"
         pkg="joint_state_publisher_gui"
         type="joint_state_publisher_gui" />
