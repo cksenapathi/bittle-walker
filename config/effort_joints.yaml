@@ -1,0 +1,29 @@
+bittle:
+  effort_controller:
+    type: "effort_controllers/JointGroupPositionController"
+    publish_rate: 50
+    joints:
+      - left_back_knee_joint
+      - left_back_shoulder_joint
+      - left_front_knee_joint
+      - left_front_shoulder_joint
+      - right_back_knee_joint
+      - right_back_shoulder_joint
+      - right_front_knee_joint
+      - right_front_shoulder_joint
+    left_back_knee_joint:
+      pid: {p: 100, i: 20, d: 50}
+    left_back_shoulder_joint:
+      pid: {p: 50, i: 20, d: 50}
+    left_front_knee_joint:
+      pid: {p: 50, i: 20, d: 50}
+    left_front_shoulder_joint:
+      pid: {p: 50, i: 20, d: 50}
+    right_back_knee_joint:
+      pid: {p: 50, i: 20, d: 50}
+    right_back_shoulder_joint:
+      pid: {p: 50, i: 20, d: 50}
+    right_front_knee_joint:
+      pid: {p: 50, i: 20, d: 50}
+    right_front_shoulder_joint:
+      pid: {p: 50, i: 20, d: 50}
