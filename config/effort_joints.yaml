@@ -12,18 +12,18 @@ bittle:
       - right_front_knee_joint
       - right_front_shoulder_joint
     left_back_knee_joint:
-      pid: {p: 100, i: 20, d: 50}
+      pid: {p: 5, i: 3, d: 1}
     left_back_shoulder_joint:
-      pid: {p: 50, i: 20, d: 50}
+      pid: {p: 5, i: 3, d: 1}
     left_front_knee_joint:
-      pid: {p: 50, i: 20, d: 50}
+      pid: {p: 5, i: 3, d: 1}
     left_front_shoulder_joint:
-      pid: {p: 50, i: 20, d: 50}
+      pid: {p: 5, i: 3, d: 1}
     right_back_knee_joint:
-      pid: {p: 50, i: 20, d: 50}
+      pid: {p: 5, i: 3, d: 1}
     right_back_shoulder_joint:
-      pid: {p: 50, i: 20, d: 50}
+      pid: {p: 5, i: 3, d: 1}
     right_front_knee_joint:
-      pid: {p: 50, i: 20, d: 50}
+      pid: {p: 5, i: 3, d: 1}
     right_front_shoulder_joint:
-      pid: {p: 50, i: 20, d: 50}
+      pid: {p: 5, i: 3, d: 1}

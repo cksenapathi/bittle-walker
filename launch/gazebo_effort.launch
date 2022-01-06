@@ -22,7 +22,7 @@
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-        args="-z 1.0 -unpause -urdf -model robot -param robot_description"
+        args="-z 0.0 -unpause -urdf -model robot -param robot_description"
         respawn="false" output="screen"/>
 
   <node if="$(arg gui_controller)" pkg="quad_walk" name="joint_transfer_node" type="joints_transfer.py"/>
@@ -30,6 +30,10 @@
   <node if="$(arg gui_controller)" name="joint_state_publisher"
         pkg="joint_state_publisher_gui"
         type="joint_state_publisher_gui" />
+
+  <node unless="$(arg gui_controller)" name="joint_state_publisher"
+        pkg="joint_state_publisher"
+        type="joint_state_publisher"/>
 
   <node pkg="robot_state_publisher" type="robot_state_publisher"
         name="robot_state_publisher">

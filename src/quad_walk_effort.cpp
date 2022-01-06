@@ -20,11 +20,18 @@ int main(int argc, char** argv){
 
   std_msgs::Float64MultiArray joint_array;
 
-  joint_array.data = std::vector<double>({0.3, 0.5, 0.3, 0.5, -0.3, -0.5, -0.3, -0.5});
+  joint_array.data = std::vector<double>({0, 0, 0, 0, 0, 0, 0, 0});
   std_msgs::MultiArrayDimension dim;
   dim.label = "dim1";
   dim.size = 9;
   dim.stride = 1;
+  joint_array.layout.data_offset = 0;
+  joint_array.layout.dim = std::vector<std_msgs::MultiArrayDimension>({dim});
+
+  joints_pub.publish(joint_array);
+  ros::Duration(3).sleep();
+
+  joint_array.data = std::vector<double>({0.3, 0.5, 0.3, 0.5, -0.3, -0.5, -0.3, -0.5});
   joint_array.layout.data_offset = 0;
   joint_array.layout.dim = std::vector<std_msgs::MultiArrayDimension>({dim});
 
