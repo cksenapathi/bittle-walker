@@ -124,6 +124,14 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
         <geometry>
           <mesh filename="package://quad_walk/obj/shoulder.004.obj" scale="1.0 1.0 1.0"/>
         </geometry>
+        <surface>
+        <friction>
+          <ode>
+            <mu>0.85</mu>
+            <mu2>0.85</mu2>
+          </ode>
+        </friction>
+      </surface>
       </collision>
     </link>
 
@@ -172,6 +180,14 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
         <geometry>
           <mesh filename="package://quad_walk/obj/shoulder.007.obj" scale="1.0 1.0 1.0"/>
         </geometry>
+        <surface>
+        <friction>
+          <ode>
+            <mu>0.85</mu>
+            <mu2>0.85</mu2>
+          </ode>
+        </friction>
+      </surface>
       </collision>
     </link>
 
@@ -234,6 +250,14 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
         <geometry>
           <mesh filename="package://quad_walk/obj/shoulder.005.obj" scale="1.0 1.0 1.0"/>
         </geometry>
+        <surface>
+        <friction>
+          <ode>
+            <mu>0.85</mu>
+            <mu2>0.85</mu2>
+          </ode>
+        </friction>
+      </surface>
       </collision>
     </link>
 
@@ -282,6 +306,14 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
         <geometry>
           <mesh filename="package://quad_walk/obj/shoulder.006.obj" scale="1.0 1.0 1.0"/>
         </geometry>
+        <surface>
+        <friction>
+          <ode>
+            <mu>0.85</mu>
+            <mu2>0.85</mu2>
+          </ode>
+        </friction>
+      </surface>
       </collision>
     </link>
 
@@ -308,7 +340,7 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
       <parent link="left-back-shoulder-link"/>
       <child link="left-back-knee-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.22173" upper="1.48353" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.22173" upper="1.48353" effort="0.5" velocity="1.5708"/>
     </joint>
 
     <joint name="left_back_shoulder_joint" type="revolute">
@@ -316,7 +348,7 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
       <parent link="base-frame-link"/>
       <child link="left-back-shoulder-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.5708" upper="1.22173" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.5708" upper="1.22173" effort="0.5" velocity="1.5708"/>
     </joint>
 
     <joint name="left_front_knee_joint" type="revolute">
@@ -324,7 +356,7 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
       <parent link="left-front-shoulder-link"/>
       <child link="left-front-knee-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.22173" upper="1.48353" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.22173" upper="1.48353" effort="0.5" velocity="1.5708"/>
     </joint>
 
     <joint name="left_front_shoulder_joint" type="revolute">
@@ -332,7 +364,7 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
       <parent link="base-frame-link"/>
       <child link="left-front-shoulder-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.5708" upper="1.22173" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.5708" upper="1.22173" effort="0.5" velocity="1.5708"/>
     </joint>
 
     <joint name="mainboard_joint" type="fixed">
@@ -346,7 +378,7 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
       <parent link="right-back-shoulder-link"/>
       <child link="right-back-knee-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.22173" upper="1.48353" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.22173" upper="1.48353" effort="0.5" velocity="1.5708"/>
     </joint>
 
     <joint name="right_back_shoulder_joint" type="revolute">
@@ -354,7 +386,7 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
       <parent link="base-frame-link"/>
       <child link="right-back-shoulder-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.5708" upper="1.22173" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.5708" upper="1.22173" effort="0.5" velocity="1.5708"/>
     </joint>
 
     <joint name="right_front_knee_joint" type="revolute">
@@ -362,7 +394,7 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
       <parent link="right-front-shoulder-link"/>
       <child link="right-front-knee-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.22173" upper="1.48353" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.22173" upper="1.48353" effort="0.5" velocity="1.5708"/>
     </joint>
 
     <joint name="right_front_shoulder_joint" type="revolute">
@@ -370,7 +402,7 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
       <parent link="base-frame-link"/>
       <child link="right-front-shoulder-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.5708" upper="1.22173" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.5708" upper="1.22173" effort="0.5" velocity="1.5708"/>
     </joint>
 
     <transmission name="lbk_trans" type="SimpleTransmission">
