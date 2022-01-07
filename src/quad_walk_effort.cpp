@@ -7,6 +7,8 @@
 // Right side angles need to be negative, left side will be positive
 // angle order goes {lbk, lbs, lfk, lfs, rbk, rbs, rfk, rfs}
 
+const double shoulder_length = .5; // meters
+const double knee_length = .54; // meters
 const double PI = 3.141592;
 
 int main(int argc, char** argv){
@@ -23,7 +25,7 @@ int main(int argc, char** argv){
   joint_array.data = std::vector<double>({0, 0, 0, 0, 0, 0, 0, 0});
   std_msgs::MultiArrayDimension dim;
   dim.label = "dim1";
-  dim.size = 9;
+  dim.size = 8;
   dim.stride = 1;
   joint_array.layout.data_offset = 0;
   joint_array.layout.dim = std::vector<std_msgs::MultiArrayDimension>({dim});
