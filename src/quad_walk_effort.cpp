@@ -9,30 +9,29 @@
 // angle order goes {lbk, lbs, lfk, lfs, rbk, rbs, rfk, rfs}
 
 
-const double shoulder_length = .5; // meters
-const double knee_length = .54; // meters
+const double S = .5; // shoulder length; meters
+const double K = .54; // knee length; meters
 const double PI = 3.141592;
 
 
-std::vector<double>& ik_right(double x, double y){
+std::vector<double> ik_left(double x, double y){
   std::vector<double> angles(2);
-  angles[0] = asin((shoulder_length * shoulder_length + knee_length * knee_length - x * x - y * y)/(2*shoulder_length*knee_length));
-  double c1 = cos(angles[0]);
-  double c2 = sin(angles[0]);
-  angles[1] = atan2((shoulder_length - knee_length * c2) * x + knee_length * c1 * y,
-                    knee_length * c1 * x + (shoulder_length - c2 * knee_length) * y);
+  angles[0] = asin((x*x + y*y - S*S - K*K)/(2*S*K));
+  double c1 = sin(angles[0]);
+  double c2 = cos(angles[0]);
+  double KC = S + K*c1;
+  angles[1] = atan((y*K*c2 - x*KC)/(x*K*c2 + y*KC));
   return angles;
 }
 
-std::vector<double>& ik_left(double x, double y){
+std::vector<double> ik_right(double x, double y){
   std::vector<double> angles(2);
-
-  angles[0] = asin((x * x + y * y - shoulder_length * shoulder_length - knee_length * knee_length )/(2*shoulder_length*knee_length));
-  double c1 = cos(angles[0]);
-  double c2 = sin(angles[0]);
-  angles[1] = atan2((shoulder_length + knee_length * c2) * x + knee_length * c1 * y,
-                    -knee_length * c1 * x + (shoulder_length + c2 * knee_length) * y);
-
+  angles[0] = asin((S*S + K*K - x*x - y*y)/(2*S*K));
+  double c1 = sin(angles[0]);
+  double c2 = cos(angles[0]);
+  double KC = S - K*c1;
+  angles[1] = atan((-y*K*c2 - x*KC)/(y*KC - x*K*c2));
+  ROS_INFO("sin theta = %f \n cos theta = %f",y*K*c2 + x*KC, x*K*c2 - KC*y);
   return angles;
 }
 
@@ -49,9 +48,9 @@ std::vector<double>& ik_left(double x, double y){
 //   return output;
 // }
 
-std::vector<double>& cart_to_angle(std::vector<double>& legs_xy){
+std::vector<double> cart_to_angle(std::vector<double>& legs_xy){
   std::vector<double> angles;
-  std::vector<double>& v = ik_left(legs_xy[0], legs_xy[1]);
+  std::vector<double> v = ik_left(legs_xy[0], legs_xy[1]);
   angles.insert(angles.end(), v.begin(), v.end());
   v = ik_left(legs_xy[2], legs_xy[3]);
   angles.insert(angles.end(), v.begin(), v.end());
@@ -75,7 +74,7 @@ int main(int argc, char** argv){
 
   // Generate positions for foot endings
   // lbx, lby, lfx, lfy, rbx, rby, rfx, rfy
-  std::vector<double> leg_xy({0, -1, 0, 0, 0, 0, 0, 0});
+  std::vector<double> leg_xy({0, -.7, 0, -.7, 0, 0.7, 0, 0.7});
   // convert to angles
   // feed into joint_array data
 
@@ -85,6 +84,10 @@ int main(int argc, char** argv){
   dim.label = "dim1";
   dim.size = 8;
   dim.stride = 1;
+
+  for(double d: joint_array.data){
+    ROS_INFO("%f", d);
+  }
   // joint_array.layout.data_offset = 0;
   // joint_array.layout.dim = std::vector<std_msgs::MultiArrayDimension>({dim});
 

@@ -75,8 +75,8 @@ target_link_libraries(
  ${PROJECT_NAME}_node
  ${catkin_LIBRARIES}
 )
-# add_executable(parser src/urdf_parser.cpp)
-# target_link_libraries(parser ${catkin_LIBRARIES})
+add_executable(zero_joints src/zero_joints.cpp)
+target_link_libraries(zero_joints ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############
