@@ -94,7 +94,7 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
       <collision name="left_back_knee_c">
         <origin xyz="-0.08998 0 -0.14638" rpy="-1.5708 1.5708 0"/>
         <geometry>
-          <mesh filename="package://quad_walk/obj/left_knee.002.obj" scale="1.0 1.0 1.0"/>
+          <mesh filename="package://quad_walk/obj/left_knee.001.obj" scale="1.0 1.0 1.0"/>
         </geometry>
         <surface>
         <friction>
@@ -149,7 +149,7 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
       <collision name="left_front_knee_c">
         <origin xyz="-0.09232 0 -0.14614" rpy="-1.5708 1.5708 0"/>
         <geometry>
-          <mesh filename="package://quad_walk/obj/left_knee.003c.obj" scale="1.0 1.0 1.0"/>
+          <mesh filename="package://quad_walk/obj/left_knee.obj" scale="1.0 1.0 1.0"/>
         </geometry>
         <surface>
         <friction>
@@ -219,7 +219,7 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
       <collision name="right_back_knee_c">
         <origin xyz="0.08426 -0.00238 -0.1382" rpy="-1.5708 -1.5708 0"/>
         <geometry>
-          <mesh filename="package://quad_walk/obj/right_knee.002c.obj" scale="1.0 1.0 1.0"/>
+          <mesh filename="package://quad_walk/obj/right_knee.001.obj" scale="1.0 1.0 1.0"/>
         </geometry>
         <surface>
         <friction>
@@ -276,7 +276,7 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
       <collision name="right_front_knee_c">
         <origin xyz="0.09497 -0.00238 -0.1382" rpy="-1.5708 -1.5708 0"/>
         <geometry>
-          <mesh filename="package://quad_walk/obj/right_knee.003c.obj" scale="1.0 1.0 1.0"/>
+          <mesh filename="package://quad_walk/obj/right_knee.obj" scale="1.0 1.0 1.0"/>
         </geometry>
         <surface>
         <friction>
