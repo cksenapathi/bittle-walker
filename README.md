@@ -11,10 +11,12 @@ ROS package for Gazebo simulation for a bittle robot and gait generation in the 
 - ~~Need to write inverse kinematics calculation for left and right side legs~~
 - trajectory generation given joint angle waypoints - will probably use a trajectory generator
 - step timing for walking, trotting, running
-- theres a segfault somewhere in the inv kin code yikes
-
+- PSOPT for trajectory optimization, IPOPT for nonlinear programming, both open source for c++
+- look into making leg contact points true cylinders in collision meshes for better stability
+  - currently blocky pieces with sharp edges
 
 # Dependencies:
 - ROS Noetic on Ubuntu 20.04
+  - Requires full download to work with Gazebo
 - ros-noetic-ros-control
 - just clone it and try to run `roslaunch quad_walker gazebo.launch` and see what crashes
