@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="model" default="$(find quad_walk)/urdf/bittle_rviz.urdf.xacro"/>
+  <arg name="model" default="$(find quad_walk)/urdf/bittle.urdf"/>
   <arg name="gui" default="true"/>
   <arg name="rvizconfig" default="$(find quad_walk)/rviz/urdf.rviz" />
 

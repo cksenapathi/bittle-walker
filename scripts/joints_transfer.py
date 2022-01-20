@@ -4,7 +4,7 @@ import rospy
 from std_msgs.msg import Float64MultiArray, MultiArrayLayout, MultiArrayDimension
 from sensor_msgs.msg import JointState
 
-pub = rospy.Publisher('/bittle/joints_controller/command', Float64MultiArray, queue_size=10)
+pub = rospy.Publisher('/bittle/effort_controller/command', Float64MultiArray, queue_size=10)
 
 
 def callback(data):
@@ -15,7 +15,7 @@ def callback(data):
 
     msg.data = data.position
     msg.layout.data_offset = 0
-    msg.layout.dim = [MultiArrayDimension(label='dim1', size=9, stride=1), ]
+    msg.layout.dim = [MultiArrayDimension(label='dim1', size=8, stride=1), ]
     pub.publish(msg)
 
 

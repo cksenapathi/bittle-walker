@@ -16,11 +16,11 @@ int main(int argc, char** argv){
   ros::NodeHandle n;
   ros::Rate rate(50);
 
-  ros::Publisher joints_pub = n.advertise<std_msgs::Float64MultiArray>("/bittle/joints_controller/command",1000);
+  ros::Publisher joints_pub = n.advertise<std_msgs::Float64MultiArray>("/bittle/effort_controller/command",1000);
 
   std_msgs::Float64MultiArray joint_array;
 
-  joint_array.data = std::vector<double>({1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6});
+  joint_array.data = std::vector<double>({0, 0, 0, 0, 0, 0, 0, 0});
   std_msgs::MultiArrayDimension dim;
   dim.label = "dim1";
   dim.size = 8;
