@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
   <!-- <robot name="bittle"> -->
-<!--TODO Replace dashes with underscores in the link and joint names because
-ROS doesn't like fucking dashes and these mother fuckers used dashes everywhere
-and I can't just ctrl f and replace because dashes are also used as negative signs -->
+
   <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="bittle">
 
     <xacro:property name="height" value="0.5" />

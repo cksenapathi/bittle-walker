@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
   <robot name="bittle">
-<!--TODO Replace dashes with underscores in the link and joint names because
-ROS doesn't like fucking dashes and these mother fuckers used dashes everywhere
-and I can't just ctrl f and replace because dashes are also used as negative signs -->
+
     <link name="base-frame-link">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -113,13 +111,13 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
         <inertia ixx="0.00044" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="0.00044"/>
       </inertial>
       <visual name="left_back_shoulder">
-        <origin xyz="0 -0.24575 0.04372" rpy="-1.5708 1.5708 0"/>
+        <origin xyz="0 -0.24575 0.04372" rpy="-1.5708 -1.5708 0"/>
         <geometry>
           <mesh filename="package://quad_walk/obj/shoulder.001.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
       <collision name="left_back_shoulder_c">
-        <origin xyz="0 -0.24575 0.04372" rpy="-1.5708 1.5708 0"/>
+        <origin xyz="0 -0.24575 0.04372" rpy="-1.5708 -1.5708 0"/>
         <geometry>
           <mesh filename="package://quad_walk/obj/shoulder.004.obj" scale="1.0 1.0 1.0"/>
         </geometry>
@@ -169,13 +167,13 @@ and I can't just ctrl f and replace because dashes are also used as negative sig
         <inertia ixx="0.00044" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="0.00044"/>
       </inertial>
       <visual name="left_front_shoulder">
-        <origin xyz="0 -0.24575 0.04372" rpy="-1.5708 1.5708 0"/>
+        <origin xyz="0 -0.24575 0.04372" rpy="-1.5708 -1.5708 0"/>
         <geometry>
           <mesh filename="package://quad_walk/obj/shoulder.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
       <collision name="left_front_shoulder_c">
-        <origin xyz="0 -0.24575 0.04372" rpy="-1.5708 1.5708 0"/>
+        <origin xyz="0 -0.24575 0.04372" rpy="-1.5708 -1.5708 0"/>
         <geometry>
           <mesh filename="package://quad_walk/obj/shoulder.007.obj" scale="1.0 1.0 1.0"/>
         </geometry>
